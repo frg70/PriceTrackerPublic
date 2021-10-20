@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/Main.cpp" "C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/cmake-build-debug/CMakeFiles/Track.dir/Main.cpp.obj"
+  "C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTrackerPublic/Track/Main.cpp" "C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTrackerPublic/Track/cmake-build-debug/CMakeFiles/Track.dir/Main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
