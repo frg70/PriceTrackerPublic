@@ -1,0 +1,109 @@
+#include "Usuario.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    int contrasena, opcion, Bcontrasena;
+    char usuario[30];
+    ofstream Guardar;
+    ifstream Leer;
+    ofstream Temp;
+    Guardar.open("Fichero.txt", ios::app);
+    while (true){
+
+        cout << "1 Guardar" << endl;
+        cout << "2 Leer" <<endl;
+        cout << "3 Buscar" << endl;
+        cout << "4 Eliminar" << endl;
+        cout << "Ingrese la opción deseada" << endl;
+        cin >> opcion;
+
+        switch(opcion) {
+
+            case 1: {
+                cout << "Ingrese el usuario" << endl;
+                cin >> usuario;
+                cout << "Ingrese su contraseña" << endl;
+                cin >> contrasena;
+                Guardar << usuario << " " << contrasena << endl;
+                break;
+
+            }
+            case 2: {
+                Leer.open("Fichero.txt");
+                Leer >> usuario;
+                while (!Leer.eof()) {
+                    Leer >> contrasena;
+                    cout << "usuario" << usuario << endl;
+                    cout << "contrasena" << contrasena << endl;
+
+                    cout << endl;
+                    Leer >> usuario;
+                }
+                Leer.close():
+                break;
+            }
+
+            case 3:
+            {
+            Leer.open("Fichero.txt");
+            Leer >> usuario;
+            bool encontrado = false;
+            cout << "Ingresar contraseña a buscar" << endl;
+            cin >> Bcontrasena;
+            while(!Leer.eof()){
+                Leer >> contrasena;
+                if(contrasena == Bcontrasena){
+                    encontrado = true;
+                    cout << "El usuario es:" << usuario << endl;
+                    cout << "La contraseña es:" << contrasena << endl;
+                    cout << endl;
+
+                }
+                Leer >> usuario;
+            }
+            if(encontrado == false){
+                cout << "No se encontró la contraseña" <<endl;
+            }
+            Leer.close();
+            }
+
+            case 4:
+            {
+                Leer.open("Fichero.txt");
+                Temp.open("Temp.txt");
+                Leer >> usuario;
+                bool encontrado = false;
+                cout << "Escribir contraseña a eliminar" << endl;
+                cin >> Bcontrasena;
+                while(!Leer.eof()) {
+                    Leer >> contrasena;
+                    if (contrasena == Bcontrasena) {
+                        encontrado = true;
+                        cout << "usuario" << usuario << endl;
+                        cout << "contraseña" << contrasena << endl;
+                        cout << endl;
+                        cout << "Eliminado" << endl;
+
+                    } else
+                    {
+                        Temp << usuario << " " << contrasena << endl;
+                    }
+                    Leer >> usuario;
+                }
+                if(encontrado == false){
+                    cout << "Contraseña no encontrada" << endl;
+                }
+                Leer.close();
+                Temp.close();
+                remove("Fichero.txt");
+                rename("Temp.txt", "Fichero.txt");
+
+            }
+        }
+    }
+}
+
+
+

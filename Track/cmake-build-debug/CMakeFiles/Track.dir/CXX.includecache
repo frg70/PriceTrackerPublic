@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/Main.cpp
+PriceTracker.h
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/PriceTracker.h
+User.h
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/User.h
+vector
+-
+iostream
+-
+
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/PriceTracker.h
+iostream
+-
+
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/User.h
+PriceTracker.h
+C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTracker/Track/PriceTracker.h
+fstream
+-
+
