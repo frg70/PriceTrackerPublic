@@ -10,10 +10,11 @@
 using namespace std;
 class Article{
 public:
-    Article(string nombre, double precio , int ){
+    Article(string nombre, double precio , int codigoProducto, string Link){
         name = nombre;
         price = precio;
-    }
+        codigoProducto = productNumber;
+        Link = URL; }
     string name;
     string URL;
     double price;

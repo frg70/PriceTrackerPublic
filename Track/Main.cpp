@@ -19,37 +19,12 @@ int main() {
     cout << usuario.userStatus()<< endl;
     cout << usuario.registerUs()<< endl;
     //Definition of objects and attributes of class article
-    Article telescopeA;
-    telescopeA.URL = "https://www.amazon.com/Celestron-31042-AstroMaster-Reflector-Telescope/dp/B000MLL6R8/ref=sr_1_18?crid=HZ052N5IUNL6&dchild=1&keywords=telescopio+newtoniano&qid=1634492229&sr=8-18";
-    telescopeA.price = 7370.36;
-    telescopeA.name = "Celestron 21062 AstroMaster Telescopio refractor 70 EQ ";
-    telescopeA.productNumber = 1;
-    Article telescopeML;
-    telescopeML.URL = "https://articulo.mercadolibre.com.mx/MLM-860743866-telescopio-celestron-astromaster-114eq-reflector-msi-_JM#position=7&search_layout=stack&type=item&tracking_id=c9a41658-ba8f-4821-b3de-ca684b6f75ab";;
-    telescopeML.price = 12799;
-    telescopeML.name = "Telescopio Celestron Astromaster 114eq Reflector Msi";
-    telescopeML.productNumber =1;
-    //Vector for the access in control system, not available now :(
-    Article CameraA;
-    CameraA.URL = "https://www.amazon.com.mx/Wyze-Cam-1080p-Interiores-Exteriores/dp/B08R59YH7W/ref=pd_rhf_ee_s_pd_crcd_44/130-0360803-7901034?pd_rd_w=0gz2j&pf_rd_p=9962b3ae-bf60-4229-a03d-58ca73a9c196&pf_rd_r=FVDKHARF5P9ZYFH0SA7V&pd_rd_r=d79dbfd2-026c-46fe-953e-ff808055c8fe&pd_rd_wg=q4Eni&pd_rd_i=B08R59YH7W&th=1";
-    CameraA.price = 1079.00;
-    CameraA.name = "Wyze Cam v3 1080p HD";
-    CameraA.productNumber = 2;
-    Article CameraML;
-    CameraML.URL = "https://articulo.mercadolibre.com.mx/MLM-929383743-wyze-cam-v3-1080p-hd-camara-de-video-para-interiorespara-_JM#position=2&search_layout=grid&type=item&tracking_id=3a8bbbaf-b44a-4c7a-b024-78a396dfb87a";
-    CameraML.price = 1742.74;
-    CameraML.name = "Wyze Cam V3 1080p Hd Camara De Video Para Interiores/para";
-    CameraML.productNumber = 2;
-    Article EchoA;
-    EchoA.URL = "https://www.amazon.com.mx/Staging-Product-Not-Retail-Sale/dp/B084DCJKSL/ref=zg-bs_amazon-devices_10/130-0360803-7901034?pd_rd_w=u0yav&pf_rd_p=16c6ce41-17c3-40da-bc4f-e2b032bf4f0f&pf_rd_r=AVSGKBGK6033BNGYXX5K&pd_rd_r=18ebec22-8fc9-497f-aaac-a69e843823b8&pd_rd_wg=U8Yh5&pd_rd_i=B084DCJKSL&psc=";
-    EchoA.price = 3999.00;
-    EchoA.name = "Nuevo Echo Show 8 (2da Generacion)";
-    EchoA.productNumber = 3;
-    Article EchoML;
-    EchoML.URL = "https://articulo.mercadolibre.com.mx/MLM-1302475270-nuevo-echo-show-8-2da-generacion-2021-envio-gratis-_JM?searchVariation=173561552751#searchVariation=173561552751&position=2&search_layout=stack&type=item&tracking_id=86fb51a6-d097-4a37-81c0-2ab2e8d6e895";
-    EchoML.price = 3099.00;
-    EchoML.name = "Nuevo Echo Show 8 (2da generacion, edición 2021) - Pantalla inteligente HD con Alexa y camara de 13 MP - Negro ";
-    EchoML.productNumber = 3;
+    Article telescopeA("Celestron 21062 AstroMaster Telescopio refractor 70 EQ ", 7370.36, 1,"https://www.amazon.com/Celestron-31042-AstroMaster-Reflector-Telescope/dp/B000MLL6R8/ref=sr_1_18?crid=HZ052N5IUNL6&dchild=1&keywords=telescopio+newtoniano&qid=1634492229&sr=8-18");
+    Article telescopeML("Telescopio Celestron Astromaster 114eq Reflector Msi", 12799,1,"https://articulo.mercadolibre.com.mx/MLM-860743866-telescopio-celestron-astromaster-114eq-reflector-msi-_JM#position=7&search_layout=stack&type=item&tracking_id=c9a41658-ba8f-4821-b3de-ca684b6f75ab");
+    Article CameraA("Wyze Cam v3 1080p HD",1079.00,2,"https://www.amazon.com.mx/Wyze-Cam-1080p-Interiores-Exteriores/dp/B08R59YH7W/ref=pd_rhf_ee_s_pd_crcd_44/130-0360803-7901034?pd_rd_w=0gz2j&pf_rd_p=9962b3ae-bf60-4229-a03d-58ca73a9c196&pf_rd_r=FVDKHARF5P9ZYFH0SA7V&pd_rd_r=d79dbfd2-026c-46fe-953e-ff808055c8fe&pd_rd_wg=q4Eni&pd_rd_i=B08R59YH7W&th=1");
+    Article CameraML("Wyze Cam V3 1080p Hd Camara De Video Para Interiores/para",1742.74,2,"https://articulo.mercadolibre.com.mx/MLM-929383743-wyze-cam-v3-1080p-hd-camara-de-video-para-interiorespara-_JM#position=2&search_layout=grid&type=item&tracking_id=3a8bbbaf-b44a-4c7a-b024-78a396dfb87a");
+    Article EchoA("Nuevo Echo Show 8 (2da Generacion)",3999.00,3,"https://www.amazon.com.mx/Staging-Product-Not-Retail-Sale/dp/B084DCJKSL/ref=zg-bs_amazon-devices_10/130-0360803-7901034?pd_rd_w=u0yav&pf_rd_p=16c6ce41-17c3-40da-bc4f-e2b032bf4f0f&pf_rd_r=AVSGKBGK6033BNGYXX5K&pd_rd_r=18ebec22-8fc9-497f-aaac-a69e843823b8&pd_rd_wg=U8Yh5&pd_rd_i=B084DCJKSL&psc=");
+    Article EchoML("Nuevo Echo Show 8 (2da generacion, edición 2021) - Pantalla inteligente HD con Alexa y camara de 13 MP - Negro ",3099.00, 3,"https://articulo.mercadolibre.com.mx/MLM-1302475270-nuevo-echo-show-8-2da-generacion-2021-envio-gratis-_JM?searchVariation=173561552751#searchVariation=173561552751&position=2&search_layout=stack&type=item&tracking_id=86fb51a6-d097-4a37-81c0-2ab2e8d6e895");
     option = EnterOption();
     productNumber = setProductnumber();
     //Selection of cases
