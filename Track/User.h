@@ -1,5 +1,6 @@
 /* Fernando Ramírez González & Joshelyn Yanori Mendoza Alfaro
  *  19/10/2021
+ *  fer.ramirez.gon@gmail.com
  */
 #ifndef TRACK_USER_H
 #define TRACK_USER_H
@@ -26,23 +27,32 @@ string registerUs() {
     else if (Status == "old"){
         Read.open("Fichero.txt");
         Read >> registeredusername;
+        Read >> registeredpassword;
         bool found = false;
+        cout << "Please enter your username";
+        cin >> username;
         cout << "Please enter your password: ";
         cin >> password;
         while (!Read.eof()){
+            Read >> registeredusername;
             Read >> registeredpassword;
-            if (registeredpassword == password){
+            if (registeredusername == username){
+                found = true;
+                cout << "Your username exists";
+                return "Please continue";
+            }
+            else if (registeredpassword == password){
                 found = true;
                 cout << "Your username and password exist, please continue.";
                 return "Please continue";
                 }
-            else if(found == false){
+            else {
                 cout << "The password does not correspond to this user :(";
                 break;
                 return 0;
                 }
-            Read.close();
         }
+        Read.close();
     }
     }
 string userStatus(){
@@ -55,9 +65,11 @@ private:
     string password;
     string Status;
     string registeredusername;
+    string username;
     string registeredpassword;
     ofstream Save;
     ifstream Read;
+
 };
 
 

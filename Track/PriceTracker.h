@@ -5,10 +5,15 @@
 #ifndef TRACK_PRICETRACKER_H
 #define TRACK_PRICETRACKER_H
 #include <iostream>
+#include <vector>
 //Definition of variables and characteristics of class article
 using namespace std;
 class Article{
 public:
+    Article(string nombre, double precio , int ){
+        name = nombre;
+        price = precio;
+    }
     string name;
     string URL;
     double price;
@@ -19,6 +24,8 @@ public:
     string getname(){
         return name;}
     int productNumber;
+    vector<Article> ListofObjects;
+
 };
 
 

@@ -32,8 +32,6 @@ def Append(Amazon,MercadoLibre):
     TelescopeList.append(Amazon,MercadoLibre)
     df = pd.DataFrame(TelescopeList)
     return df
-while(True):
-    Append(Amazon,MercadoLibre)
-    time.sleep(604800)
+
 
 
