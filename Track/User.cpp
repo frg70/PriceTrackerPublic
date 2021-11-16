@@ -3,12 +3,15 @@
  *  fer.ramirez.gon@gmail.com
  */
 #include "User.h"
-User master("LABGEDV8647.", "frg");
+#include <string>
 //User register system section
 //User constructor
-User::User(string password, string username) {
-    registeredpassword = password;
-    registeredusername = username;}
+using namespace std;
+User master;
+string User::getRegisteredUser() {
+    return registeredusername;}
+string User::getRegisteredPassword() {
+    return registeredpassword;}
 //Establishing the status of the user
 string User::setUserStatus() {
     cout << "Please enter your user status new or old user: ";
@@ -17,15 +20,19 @@ string User::setUserStatus() {
 //To retrieve the status
 string User::getUserStatus() {
     return Status;}
+
+string User::getUserAccessStatus() {
+    return AccessStatus;}
 //This system is for registering a new user
-void User::registerSystem() {
+string User::registerSystem() {
     ofstream Save;
     string answer;
+    int code = 303;
     Save.open("Fichero.txt", ios::app);
     cout << "Welcome to the user register system" << endl;
-    cout << "Would you like to register?, please type yes or no." << endl;
-    cin >> answer;
     try {
+        cout << "Would you like to register?, please type yes or no." << endl;
+        cin >> answer;
         if (answer == "yes") {
             cout << "Enter your username" << endl;
             cin >> registeredusername;
@@ -37,29 +44,28 @@ void User::registerSystem() {
         } else if (answer == "no") {
             cout << "Thanks for using our system, you can continue without registering";
         }
-    } catch (string answer) {
-        cout << "Error 1; register commando no accepted, please try again";
-        master.creatingUser(registeredpassword,registeredusername);
+        else{
+            cout<< "Try again";
+        }
     }
+    catch (string &answer) {
+        cout << "Error 1; register command no accepted, please try again";
+    }
+    return " ";
 }
-
-void User::creatingUser(string username, string password) {
-    User usuario(username, password);
-}
-
 // Access system
 string User::accesSystem() {
     ofstream Save;
     string username, password;
     try {
         if (Status == "new"){
-            cout << "Please enter register using our registering system.";
-            master.registerSystem();}
+            cout << "Please register  usign our system.";
+            cout << master.registerSystem();}
         else if (Status == "old"){
             Read.open("Fichero.txt");
             Read >> registeredusername;
             Read >> registeredpassword;
-            bool found = false;
+            bool found1 = false, found2 = false;
             cout << "Please enter your username";
             cin >> username;
             cout << "Please enter your password: ";
@@ -68,15 +74,15 @@ string User::accesSystem() {
                 Read >> registeredusername;
                 Read >> registeredpassword;
                 if (registeredusername == username){
-                    found = true;
+                    found1 = true;
                     cout << "Your username exists";
                     return "Please continue";
                 }
                 else if (registeredpassword == password){
-                    found = true;
-                    cout << "Your username and password exist, please continue.";
-                    return "Please continue";
+                    found2 = true;
                 }
+                if (found1 == true, found2 == true){
+                   cout << "Both your password and user name exist please continue.";}
     }
     }
         }
@@ -89,8 +95,9 @@ string User::accesSystem() {
 //User menu section
 
 
+
 //Object method section
-void User::addtoWachlist(Article object) {
+int User::addtoWachlist(Article object) {
     string answer;
     cout << "Would you like to add this object into your watchlist?" << endl;
     cout << "Please answer with yes or no" << endl;
@@ -102,9 +109,10 @@ void User::addtoWachlist(Article object) {
         } else if (answer == "no") {
             cout << "Thanks for your search, hope to see you soon";
         }
-    } catch (string answer) {
+    } catch (string &answer) {
         cout << "Error 404 your answer has not been found, please enter yes or no. ";
     }
+    return 0;
 }
 
 

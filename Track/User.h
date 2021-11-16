@@ -11,14 +11,15 @@
 using namespace std;
 class User{
 public:
-User(string, string);
 //Definition of control system
-void registerSystem();
+string registerSystem();
 string getUserStatus();
 string setUserStatus();
 string accesSystem();
-void addtoWachlist(Article object);
-void creatingUser(string, string);
+string getUserAccessStatus();
+int addtoWachlist(Article object);
+string getRegisteredPassword();
+string getRegisteredUser();
 private:
 //Save password as a characteristic of the object username
     string Status;
@@ -26,12 +27,8 @@ private:
     ifstream Read;
     string registeredusername;
     string registeredpassword;
+    string AccessStatus;
     vector<Article> options;
-};
-class NewUser : public User{
-public:
-
-
 };
 
 #endif //PROYECTODECOMPUTACION_USUARIO_H

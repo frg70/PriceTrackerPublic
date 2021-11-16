@@ -5,3 +5,7 @@ CMakeFiles\Track.dir\Main.cpp.obj: ..\Main.cpp
 CMakeFiles\Track.dir\Main.cpp.obj: ..\PriceTracker.h
 CMakeFiles\Track.dir\Main.cpp.obj: ..\User.h
 
+CMakeFiles\Track.dir\User.cpp.obj: ..\PriceTracker.h
+CMakeFiles\Track.dir\User.cpp.obj: ..\User.cpp
+CMakeFiles\Track.dir\User.cpp.obj: ..\User.h
+

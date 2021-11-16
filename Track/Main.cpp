@@ -13,12 +13,15 @@ string setStore(string store);
 int setProductnumber();
 int main() {
     //Access control system
-    User master("LABGEDV8647.", "frg");
+    User usuario;
     cout << "Thanks for using our system" << endl;
-
-
-    cout << usuario.getUserStatus()<< endl;
-    cout << usuario.registerUs()<< endl;
+    cout << "Please confirm your status" << endl;
+    cout << usuario.setUserStatus() << endl;
+    if (usuario.getUserStatus() == "new"){
+        cout << usuario.registerSystem();
+    }
+    else if (usuario.getUserStatus() == "old"){
+        cout << usuario.accesSystem();}
     //Definition of objects and attributes of class article
     Article telescopeA("Celestron 21062 AstroMaster Telescopio refractor 70 EQ ", 7370.36, 1,"https://www.amazon.com/Celestron-31042-AstroMaster-Reflector-Telescope/dp/B000MLL6R8/ref=sr_1_18?crid=HZ052N5IUNL6&dchild=1&keywords=telescopio+newtoniano&qid=1634492229&sr=8-18");
     Article telescopeML("Telescopio Celestron Astromaster 114eq Reflector Msi", 12799,1,"https://articulo.mercadolibre.com.mx/MLM-860743866-telescopio-celestron-astromaster-114eq-reflector-msi-_JM#position=7&search_layout=stack&type=item&tracking_id=c9a41658-ba8f-4821-b3de-ca684b6f75ab");
@@ -96,7 +99,6 @@ int setProductnumber(){
     cout << "Please your product number, 1 for Telescope, 2 for Camera, 3 for Tablet";
     cin >> productNumber;
     return productNumber;}
-
 
 
 
