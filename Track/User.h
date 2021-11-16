@@ -11,67 +11,28 @@
 using namespace std;
 class User{
 public:
+User(string, string);
 //Definition of control system
-string registerUs() {
-    ofstream Save;
-    if (Status == "new"){
-        Save.open("Fichero.txt", ios::app);
-        cout << "Enter your username" ;
-        cin >> registeredusername;
-        cout << "Enter your password: ";
-        cin >> registeredpassword;
-        Save << registeredusername << " " << registeredpassword;
-        Read.close();
-        return "Thanks for your answer";
-    }
-    else if (Status == "old"){
-        Read.open("Fichero.txt");
-        Read >> registeredusername;
-        Read >> registeredpassword;
-        bool found = false;
-        cout << "Please enter your username";
-        cin >> username;
-        cout << "Please enter your password: ";
-        cin >> password;
-        while (!Read.eof()){
-            Read >> registeredusername;
-            Read >> registeredpassword;
-            if (registeredusername == username){
-                found = true;
-                cout << "Your username exists";
-                return "Please continue";
-            }
-            else if (registeredpassword == password){
-                found = true;
-                cout << "Your username and password exist, please continue.";
-                return "Please continue";
-                }
-            else {
-                cout << "The password does not correspond to this user :(";
-                break;
-                return 0;
-                }
-        }
-        Read.close();
-    }
-    }
-string userStatus(){
-    cout << "Please enter your user status new or old user: ";
-    cin >> Status;
-    return "Thanks for confirming your status";
-}
+void registerSystem();
+string getUserStatus();
+string setUserStatus();
+string accesSystem();
+void addtoWachlist(Article object);
+void creatingUser(string, string);
 private:
 //Save password as a characteristic of the object username
-    string password;
     string Status;
-    string registeredusername;
-    string username;
-    string registeredpassword;
     ofstream Save;
     ifstream Read;
+    string registeredusername;
+    string registeredpassword;
+    vector<Article> options;
+};
+class NewUser : public User{
+public:
+
 
 };
-
 
 #endif //PROYECTODECOMPUTACION_USUARIO_H
 #endif //TRACK_USER_H

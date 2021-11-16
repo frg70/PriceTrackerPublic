@@ -3,10 +3,8 @@
  */
 #include "PriceTracker.h"
 #include "User.h"
-#include <vector>
 #include <iostream>
 //Definition of variables and functions for main
-vector<Article> options; //This variable is for the control system in the future
 int EnterOption();
 int option;
 int productNumber;
@@ -14,9 +12,12 @@ string store;
 string setStore(string store);
 int setProductnumber();
 int main() {
-    User usuario;
     //Access control system
-    cout << usuario.userStatus()<< endl;
+    User master("LABGEDV8647.", "frg");
+    cout << "Thanks for using our system" << endl;
+
+
+    cout << usuario.getUserStatus()<< endl;
     cout << usuario.registerUs()<< endl;
     //Definition of objects and attributes of class article
     Article telescopeA("Celestron 21062 AstroMaster Telescopio refractor 70 EQ ", 7370.36, 1,"https://www.amazon.com/Celestron-31042-AstroMaster-Reflector-Telescope/dp/B000MLL6R8/ref=sr_1_18?crid=HZ052N5IUNL6&dchild=1&keywords=telescopio+newtoniano&qid=1634492229&sr=8-18");
@@ -37,52 +38,45 @@ int main() {
                 cout << "This is the name of your product: " << telescopeA.getname() << endl;
                 cout << "The price in Amazon is of: " << telescopeA.getPrice() << endl;
                 cout << "Here you can find the URL: " << telescopeA.getURL() << endl;
-                options.push_back(telescopeA);
-            }
+                usuario.addtoWachlist(telescopeA);}
            else if (store == "MercadoLibre" and productNumber == 1){
                cout << "You have selected Telescope."<< endl;
                cout << "This is the name of your product: " << telescopeML.getname() << endl;
                cout << "The price in Mercado Libre is of: " << telescopeML.getPrice() << endl;
                cout << "Here ypu can find the URL: " << telescopeML.getURL() << endl;
-           options.push_back(telescopeML);
-           }
+               usuario.addtoWachlist(telescopeML);}
         case 2:
             if (store == "Amazon" and productNumber == 2){
                 cout << "You have selected the Wyze Camera."<< endl;
                 cout << "This is the name of your product: " << CameraA.getname() << endl;
                 cout << "The price in Amazon is of: " << CameraA.getPrice() << endl;
                 cout << "Here you can find the URL: " << CameraA.getURL() << endl;
-            options.push_back(CameraA);
-            }
+                usuario.addtoWachlist(CameraA);}
             else if (store == "MercadoLibre" and productNumber ==2){
                 cout << "You have selected the Wyze Camera."<< endl;
                 cout << "This is the name of your product: " << CameraML.getname() << endl;
                 cout << "The price in Mercado Libre is of: " << CameraML.getPrice() << endl;
                 cout << "Here ypu can find the URL: " << CameraML.getURL() << endl;
-            options.push_back(CameraML);
-            }
+                usuario.addtoWachlist(CameraML);}
         case 3:
             if (store == "Amazon" and  productNumber ==3){
                 cout << "You have selected the Echo Tablet.";
                 cout << "This is the name of your product: " << EchoA.getname() << endl;
                 cout << "The price in Amazon is of: " << EchoA.getPrice() << endl;
                 cout<< "Here you can find the URL: " << EchoA.getURL() << endl;
-            options.push_back(EchoA);
-            }
+                usuario.addtoWachlist(EchoA);}
             else if (store == "MercadoLibre" and productNumber == 3){
                 cout << "You have selected the Echo Tablet.";
                 cout << "This is the name of your product: " << EchoML.getname() << endl;
                 cout << "The price in Mercado Libre is of: " << EchoML.getPrice() << endl;
                 cout << "Here ypu can find the URL: " << EchoML.getURL() << endl;
-            options.push_back(EchoML);
-            }
+                usuario.addtoWachlist(EchoML);}
        }
     return 0;
 }
 //Definition of article selector
 int EnterOption() {
-    {
-        int op;
+    {int op;
         do {
             cout << "Select your objetct, enter 1 for Telescope, enter 2 for the Wyze camera; and enter 3 for the Echo Tablet: ";
             cin >> op;
@@ -94,12 +88,9 @@ string setStore(){
     cout << "Please select your store";
     if ( store == "Amazon" or store == "Mercado Libre"){
         cin >> store;
-        return "Thanks for entering your store";
-    }
+        return "Thanks for entering your store";}
     else {
-        return "Your store is not available now, we are working on it.";
-    }
-
+        return "Your store is not available now, we are working on it.";}
 }
 int setProductnumber(){
     cout << "Please your product number, 1 for Telescope, 2 for Camera, 3 for Tablet";

@@ -90,6 +90,9 @@
 		<Unit filename="C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTrackerPublic/Track/PriceTracker.h">
 			<Option target="Track"/>
 		</Unit>
+		<Unit filename="C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTrackerPublic/Track/User.cpp">
+			<Option target="Track"/>
+		</Unit>
 		<Unit filename="C:/Users/980012754/Documents/PricetrackingsystemC++/PriceTrackerPublic/Track/User.h">
 			<Option target="Track"/>
 		</Unit>

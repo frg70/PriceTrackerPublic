@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Track.dir/Main.cpp.obj"
+  "CMakeFiles/Track.dir/User.cpp.obj"
   "Track.exe"
   "Track.exe.manifest"
   "Track.lib"

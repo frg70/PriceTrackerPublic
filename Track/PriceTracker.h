@@ -10,23 +10,22 @@
 using namespace std;
 class Article{
 public:
-    Article(string nombre, double precio , int codigoProducto, string Link){
+    Article(string nombre, double precio , int codigoProducto, string url){
         name = nombre;
         price = precio;
-        codigoProducto = productNumber;
-        Link = URL; }
-    string name;
-    string URL;
-    double price;
+        productNumber = codigoProducto;
+        URL = url;}
     double getPrice(){
         return price;}
     string getURL(){
         return URL;}
     string getname(){
         return name;}
+private:
+    string name;
+    string URL;
+    double price;
     int productNumber;
-    vector<Article> ListofObjects;
-
 };
 
 

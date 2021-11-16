@@ -74,17 +74,38 @@ CMakeFiles\Track.dir\Main.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Track.dir\Main.cpp.s /c C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\Main.cpp
 <<
 
+CMakeFiles\Track.dir\User.cpp.obj: CMakeFiles\Track.dir\flags.make
+CMakeFiles\Track.dir\User.cpp.obj: ..\User.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Track.dir/User.cpp.obj"
+	"C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Track.dir\User.cpp.obj /FdCMakeFiles\Track.dir\ /FS -c C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\User.cpp
+<<
+
+CMakeFiles\Track.dir\User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Track.dir/User.cpp.i"
+	"C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" > CMakeFiles\Track.dir\User.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\User.cpp
+<<
+
+CMakeFiles\Track.dir\User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Track.dir/User.cpp.s"
+	"C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Track.dir\User.cpp.s /c C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\User.cpp
+<<
+
 # Object files for target Track
 Track_OBJECTS = \
-"CMakeFiles\Track.dir\Main.cpp.obj"
+"CMakeFiles\Track.dir\Main.cpp.obj" \
+"CMakeFiles\Track.dir\User.cpp.obj"
 
 # External object files for target Track
 Track_EXTERNAL_OBJECTS =
 
 Track.exe: CMakeFiles\Track.dir\Main.cpp.obj
+Track.exe: CMakeFiles\Track.dir\User.cpp.obj
 Track.exe: CMakeFiles\Track.dir\build.make
 Track.exe: CMakeFiles\Track.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Track.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Track.exe"
 	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Track.dir --rc="C:\PROGRA~2\Windows Kits\10\bin\10.0.20348.0\x86\rc.exe" --mt="C:\PROGRA~2\Windows Kits\10\bin\10.0.20348.0\x86\mt.exe" --manifests -- "C:\PROGRA~2\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\Track.dir\objects1.rsp @<<
  /out:Track.exe /implib:Track.lib /pdb:C:\Users\980012754\Documents\PricetrackingsystemC++\PriceTrackerPublic\Track\cmake-build-debug\Track.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
