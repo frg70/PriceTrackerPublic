@@ -4,6 +4,7 @@
  */
 #include "User.h"
 #include <string>
+#include <fstream>
 //User register system section
 //User constructor
 using namespace std;
@@ -82,14 +83,14 @@ string User::accesSystem() {
                     found2 = true;
                 }
                 if (found1 == true, found2 == true){
-                   cout << "Both your password and user name exist please continue.";}
-    }
-    }
+                    cout << "Both your password and user name exist please continue.";}
+            }
         }
+    }
     catch (string password){
         cout << "Error 404 your password or username was not found";
     }
-        Read.close();
+    Read.close();
     return 0;
 }
 //Object method section
@@ -108,6 +109,22 @@ int User::addtoWachlist(Article object) {
     } catch (string &answer) {
         cout << "Error 404 your answer has not been found, please enter yes or no. ";
     }
+    return 0;
+}
+//Read csv file.
+void read(){
+    ifstream fin;
+    string line;
+    //Open an existing file.
+    fin.open("itemListAmazon.csv");
+    while(!fin.eof()){
+
+        fin >> line;
+        cout << line << " ";
+    }
+}
+int main(){
+    read();
     return 0;
 }
 
