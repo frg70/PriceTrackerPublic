@@ -92,10 +92,6 @@ string User::accesSystem() {
         Read.close();
     return 0;
 }
-//User menu section
-
-
-
 //Object method section
 int User::addtoWachlist(Article object) {
     string answer;

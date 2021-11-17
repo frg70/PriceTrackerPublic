@@ -18,8 +18,7 @@ int main() {
     cout << "Please confirm your status" << endl;
     cout << usuario.setUserStatus() << endl;
     if (usuario.getUserStatus() == "new"){
-        cout << usuario.registerSystem();
-    }
+        cout << usuario.registerSystem();}
     else if (usuario.getUserStatus() == "old"){
         cout << usuario.accesSystem();}
     //Definition of objects and attributes of class article
