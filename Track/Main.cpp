@@ -4,6 +4,7 @@
 #include "PriceTracker.h"
 #include "User.h"
 #include <iostream>
+#include <array>
 //Definition of variables and functions for main
 int EnterOption();
 int option;
@@ -11,6 +12,7 @@ int productNumber;
 string store;
 string setStore(string store);
 int setProductnumber();
+using namespace std;
 int main() {
     //Access control system
     User usuario;

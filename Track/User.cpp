@@ -4,7 +4,6 @@
  */
 #include "User.h"
 #include <string>
-#include <fstream>
 //User register system section
 //User constructor
 using namespace std;
@@ -21,7 +20,6 @@ string User::setUserStatus() {
 //To retrieve the status
 string User::getUserStatus() {
     return Status;}
-
 string User::getUserAccessStatus() {
     return AccessStatus;}
 //This system is for registering a new user
@@ -76,14 +74,13 @@ string User::accesSystem() {
                 Read >> registeredpassword;
                 if (registeredusername == username){
                     found1 = true;
-                    cout << "Your username exists";
                     return "Please continue";
                 }
                 else if (registeredpassword == password){
                     found2 = true;
                 }
                 if (found1 == true, found2 == true){
-                    cout << "Both your password and user name exist please continue.";}
+                    return "Both your password and user name exist please continue.";}
             }
         }
     }
@@ -91,10 +88,9 @@ string User::accesSystem() {
         cout << "Error 404 your password or username was not found";
     }
     Read.close();
-    return 0;
 }
 //Object method section
-int User::addtoWachlist(Article object) {
+int User::addtoWachlist(Article object){
     string answer;
     cout << "Would you like to add this object into your watchlist?" << endl;
     cout << "Please answer with yes or no" << endl;
@@ -111,21 +107,17 @@ int User::addtoWachlist(Article object) {
     }
     return 0;
 }
+//Menu of the different users, for the future, not available for now.
 //Read csv file.
-void read(){
+void User::readCSV() {
     ifstream fin;
     string line;
     //Open an existing file.
     fin.open("itemListAmazon.csv");
-    while(!fin.eof()){
-
+    while (!fin.eof()) {
         fin >> line;
         cout << line << " ";
     }
-}
-int main(){
-    read();
-    return 0;
 }
 
 

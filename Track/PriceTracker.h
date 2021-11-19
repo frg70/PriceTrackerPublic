@@ -15,7 +15,7 @@ public:
         price = precio;
         productNumber = codigoProducto;
         URL = url;}
-    double getPrice(){
+    string getPrice(){
         return price;}
     string getURL(){
         return URL;}
@@ -24,8 +24,9 @@ public:
 private:
     string name;
     string URL;
-    double price;
+    string price;
     int productNumber;
+    string deliveryDate;
 };
 
 

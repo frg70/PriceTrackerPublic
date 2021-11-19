@@ -20,6 +20,7 @@ string getUserAccessStatus();
 int addtoWachlist(Article object);
 string getRegisteredPassword();
 string getRegisteredUser();
+void readCSV();
 private:
 //Save password as a characteristic of the object username
     string Status;
