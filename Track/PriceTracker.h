@@ -27,6 +27,7 @@ private:
     string price;
     int productNumber;
     string deliveryDate;
+    vector<Article>ArticleList;
 };
 
 

@@ -4,6 +4,8 @@
  */
 #include "User.h"
 #include <string>
+#include <iostream>
+#include <conio.h>
 //User register system section
 //User constructor
 using namespace std;
@@ -35,9 +37,16 @@ string User::registerSystem() {
         if (answer == "yes") {
             cout << "Enter your username" << endl;
             cin >> registeredusername;
+            Save << registeredusername;
             cout << "Enter your password: " << endl;
-            cin >> registeredpassword;
-            Save << registeredusername << " " << registeredpassword;
+            int ch;
+            ch = getch();
+            while (ch != 13){
+                registeredpassword.push_back(ch);
+                cout << "*";
+                ch = getch();
+                Save << registeredpassword;
+            }
             Read.close();
             cout << "Thanks for your answer";
         } else if (answer == "no") {

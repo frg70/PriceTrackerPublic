@@ -8,6 +8,7 @@
 #define PROYECTODECOMPUTACION_USUARIO_H
 #include "PriceTracker.h"
 #include <fstream>
+#include <array>
 using namespace std;
 class User{
 public:
